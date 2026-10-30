@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <title>Contact Us | Naivik</title>
+  
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link id="pagestyle" href="../assets/css/material-kit.css?v=3.1.0" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../assets/css/floating-navbar.css">
+  <script src="../assets/js/floating-navbar.js"></script>
+
+  <style>
+    .navbar-brand.tracking-widest {
+      letter-spacing: 0.3rem; /* Spaced out letters for a premium look */
+      font-size: 1.2rem;
+      font-family: 'Inter', sans-serif;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+
+    .navbar-brand.tracking-widest:hover {
+      opacity: 1;
+    }
+
+    :root {
+      --baby-blue: #89CFF0;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+    }
+
+    body { 
+      background-color: #ffffff; 
+      color: var(--text-dark);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .text-naivik-blue { color: var(--baby-blue) !important; }
+    
+    /* Interactive Form Styles */
+    .form-control {
+      border: 1px solid #e2e8f0;
+      padding: 0.75rem 1rem;
+      transition: all 0.3s ease;
+      border-radius: 12px;
+    }
+
+    /* Hover effect: Border turns blue */
+    .form-control:hover {
+      border-color: var(--baby-blue);
+    }
+
+    /* Focus effect: Blue border and soft glow */
+    .form-control:focus {
+      border-color: var(--baby-blue);
+      box-shadow: 0 0 0 3px rgba(137, 207, 240, 0.2);
+    }
+
+    .contact-card {
+      border-radius: 24px;
+      border: 1px solid #f1f5f9;
+      background: #ffffff;
+    }
+
+    .icon-circle {
+      width: 50px;
+      height: 50px;
+      background: rgba(137, 207, 240, 0.1);
+      color: var(--baby-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .btn-naivik {
+      background: linear-gradient(135deg, #89CFF0 0%, #3a8fb7 100%);
+      color: white;
+      border-radius: 50px;
+      padding: 0.8rem 2rem;
+      font-weight: 600;
+      border: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-naivik:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(137, 207, 240, 0.3);
+      color: white;
+    }
+
+    /* --- Naivik Light Footer Styles --- */
+
+    .bg-light-glass {
+        background: rgba(137, 207, 240, 0.05);
+        backdrop-filter: blur(5px);
+    }
+
+    .bg-splatter-light {
+        position: absolute;
+        background: radial-gradient(circle, rgba(137, 207, 240, 0.3) 0%, transparent 70%);
+        filter: blur(50px);
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .footer-link-light {
+        color: #64748b;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+
+    .footer-link-light:hover {
+        color: #89CFF0; /* Baby Blue */
+        padding-left: 5px;
+    }
+
+    .icon-box-sm-light {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f8fafc;
+        color: #64748b;
+        border-radius: 50%;
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+    }
+
+    .icon-box-sm-light:hover {
+        background: #89CFF0;
+        color: #fff;
+        border-color: #89CFF0;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(137, 207, 240, 0.3);
+    }
+
+    .status-dot-light {
+        width: 8px;
+        height: 8px;
+        background-color: #00d2ff;
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 0 8px rgba(0, 210, 255, 0.5);
+        animation: pulse-blue-light 2s infinite;
+    }
+
+    @keyframes pulse-blue-light {
+        0% { transform: scale(0.9); opacity: 0.6; }
+        70% { transform: scale(1.1); opacity: 1; }
+        100% { transform: scale(0.9); opacity: 0.6; }
+    }
+
+
+    /* --- Booking widget --- */
+    .book-card { border-radius: 24px; border: 1px solid #e2e8f0; background: #f8fafc; }
+    .book-inner { background: #fff; border: 1px solid #e2e8f0; border-radius: 18px; padding: 1.25rem; }
+    .cal-nav-btn, .tz-pill {
+      border: 1px solid #e2e8f0; background: #fff; border-radius: 10px; width: 36px; height: 36px;
+      display: inline-flex; align-items: center; justify-content: center; color: #1e293b; cursor: pointer; padding: 0;
+    }
+    .cal-nav-btn:disabled { opacity: .35; cursor: not-allowed; }
+    .month-pill { background: rgba(137,207,240,.18); color: #1a7fb0; font-weight: 700; font-size: .85rem; border-radius: 10px; padding: 8px 14px; }
+    .day-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+    .day-cell {
+      border: 1px solid #e2e8f0; background: #fff; border-radius: 12px; padding: 8px 0 10px;
+      text-align: center; cursor: pointer; transition: all .2s ease; font-family: inherit;
+    }
+    .day-cell .dow { display: block; font-size: .7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; }
+    .day-cell .dnum { display: block; font-size: 1.05rem; font-weight: 700; color: #1e293b; margin: 2px 0; }
+    .day-cell .dcount { display: block; font-size: .65rem; color: #64748b; }
+    .day-cell:hover:not(:disabled) { border-color: var(--baby-blue); }
+    .day-cell.active { background: rgba(137,207,240,.22); border-color: var(--baby-blue); }
+    .day-cell.active .dnum { color: #1a7fb0; }
+    .day-cell:disabled { background: #f1f5f9; cursor: not-allowed; opacity: .55; }
+    .slot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 8px; }
+    .slot-btn { border: 1px solid #e2e8f0; background: #fff; border-radius: 10px; padding: 8px 4px; font-size: .85rem; font-weight: 600; color: #1e293b; cursor: pointer; transition: all .2s ease; font-family: inherit; }
+    .slot-btn:hover { border-color: var(--baby-blue); }
+    .slot-btn.active { background: #38bdf8; border-color: #38bdf8; color: #0b0f19; }
+    .avail-badge { background: rgba(34,197,94,.12); color: #15803d; font-size: .72rem; font-weight: 700; border-radius: 999px; padding: 4px 12px; }
+    .day-grid > * { min-width: 0; }
+    @media (max-width: 575px) {
+      .book-inner { padding: .9rem; }
+      .day-grid { gap: 4px; }
+      .day-cell .dcount { display: none; }
+      .day-cell .dow { font-size: .6rem; }
+      .day-cell .dnum { font-size: .95rem; }
+      .slot-grid { grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); }
+    }
+    .dot-b { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 10px; }
+
+    /* Ensure typography matches Naivik brand */
+    .text-naivik-dark { color: #1e293b; }
+    .text-naivik-muted { color: #64748b; }
+  </style>
+</head>
+
+<body>
+  <section class="py-9">
+    <div class="container">
+      <div class="row align-items-center">
+        
+        <div class="col-lg-5 mb-5 mb-lg-0">
+          <h6 class="text-naivik-blue font-weight-bolder text-uppercase tracking-widest mb-3">Contact Us</h6>
+          <h1 class="display-4 font-weight-bolder mb-4">Let’s Start a <br>Conversation</h1>
+          <p class="text-muted lead mb-5">
+            Whether you're looking to modernize your systems with the Naivik platform or need custom enterprise consulting, our team is here to help.
+          </p>
+
+          <div class="d-flex mb-4">
+            <div class="icon-circle me-3">
+              <span class="material-symbols-rounded">mail</span>
+            </div>
+            <div>
+              <p class="text-xs text-uppercase font-weight-bold text-muted mb-0">Email us at</p>
+              <h5 class="font-weight-bold">manoj.jayaswal@naivik.com</h5>
+            </div>
+          </div>
+
+          <div class="d-flex mb-4">
+            <div class="icon-circle me-3">
+              <span class="material-symbols-rounded">location_on</span>
+            </div>
+            <div>
+              <p class="text-xs text-uppercase font-weight-bold text-muted mb-0">Visit us in</p>
+              <h5 class="font-weight-bold">Markham, ON, Canada</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7 ps-lg-6">
+          <div class="book-card shadow-xl p-3 p-md-5">
+            <h3 class="font-weight-bolder mb-1">Send Us a Message</h3>
+            <p class="text-muted mb-4">Tell us a little about your goals and we'll get back to you by email.</p>
+
+            <form id="contact-form">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label class="form-label font-weight-bold small">Full Name</label>
+                  <input type="text" name="name" class="form-control" placeholder="John Doe" required>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label class="form-label font-weight-bold small">Email Address</label>
+                  <input type="email" name="email" class="form-control" placeholder="john@company.com" required>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label font-weight-bold small">Subject</label>
+                <select name="subject" class="form-control">
+                  <option>Naivik Platform Inquiry</option>
+                  <option>Enterprise Consulting</option>
+                  <option>Careers</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label font-weight-bold small">How can we help?</label>
+                <textarea name="message_body" id="message-body" class="form-control" rows="4" placeholder="Tell us about your project or goals..." required></textarea>
+              </div>
+
+              <input type="hidden" name="to_email" value="manoj.jayaswal@naivik.com">
+              <input type="hidden" name="message" id="message-full">
+
+              <div class="text-end">
+                <button type="submit" class="btn btn-naivik shadow-info">
+                  Send Message
+                  <i class="fas fa-paper-plane ms-2"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer py-7 bg-white position-relative overflow-hidden border-top">
+    <div class="bg-splatter-light" style="bottom: -10%; right: -5%; opacity: 0.15; width: 400px; height: 400px;"></div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <a class="navbar-brand font-weight-bolder text-naivik-dark tracking-widest text-uppercase mb-4 d-block" href="index.html">
+            Naivik
+          </a>
+          <p class="text-naivik-muted pe-lg-5 mb-4">
+            Bridging the gap between complex legacy systems and future-ready efficiency through AI-powered automation and the Naivik platform.
+          </p>
+          <div class="social-icons d-flex gap-3">
+            <a href="#" class="icon-box-sm-light"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="icon-box-sm-light"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="icon-box-sm-light"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-2 mb-4 mb-md-0">
+          <h6 class="text-naivik-dark font-weight-bolder text-uppercase mb-3 small">Company</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about-us.html" class="footer-link-light">About Us</a></li>
+            <li class="mb-2"><a href="about-us.html#join-team" class="footer-link-light">Careers</a></li>
+            <li class="mb-2"><a href="#" class="footer-link-light">Partners</a></li>
+            <li class="mb-2"><a href="contact-us.html" class="footer-link-light">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 mb-4 mb-md-0">
+          <h6 class="text-naivik-dark font-weight-bolder text-uppercase mb-3 small">Solutions</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="services.html" class="footer-link-light">Naivik Platform</a></li>
+            <li class="mb-2"><a href="services.html" class="footer-link-light">AI Agent Development</a></li>
+            <li class="mb-2"><a href="services.html" class="footer-link-light">IT Strategic Planning</a></li>
+            <li class="mb-2"><a href="services.html" class="footer-link-light">Workflow Automation</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h6 class="text-naivik-dark font-weight-bolder text-uppercase mb-3 small">Get in Touch</h6>
+          <p class="text-naivik-muted small mb-2 d-flex align-items-center">
+            <span class="material-symbols-rounded text-info me-2 fs-6">mail</span>
+            manoj.jayaswal@naivik.com
+          </p>
+          <p class="text-naivik-muted small mb-2 d-flex align-items-center">
+            <span class="material-symbols-rounded text-info me-2 fs-6">location_on</span>
+            Markham, ON, Canada
+          </p>
+          <div class="mt-4 p-3 border-radius-lg bg-light-glass border border-light">
+            <p class="text-naivik-dark text-xs font-weight-bold mb-1">Status</p>
+            <p class="text-info text-xs mb-0 d-flex align-items-center">
+              <span class="status-dot-light me-2"></span> Systems Operational
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="horizontal dark my-5 opacity-1">
+
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <p class="text-naivik-muted opacity-6 small mb-0">
+            © <script>document.write(new Date().getFullYear())</script> Naivik Technologies. All rights reserved.
+          </p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="#" class="footer-link-light small mx-2">Privacy Policy</a>
+          <a href="#" class="footer-link-light small mx-2">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+
+  <!--  EmailJS Setup  -->
+
+  <script type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+
+  <script type="text/javascript">
+    (function() {
+      // EmailJS public key
+      emailjs.init("Ane28-aCxQ6BFFizn");
+    })();
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contact-form');
+      if (!contactForm) return;
+
+      // ---- Submit ----
+      contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const btn = contactForm.querySelector('button[type="submit"]');
+        const originalBtnText = btn.innerHTML;
+        btn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin ms-2"></i>';
+        btn.disabled = true;
+
+        document.getElementById('message-full').value = document.getElementById('message-body').value;
+
+        emailjs.sendForm('service_cn0w374', 'template_5c9qiqb', contactForm)
+          .then(() => {
+            btn.innerHTML = 'Sent! <i class="fas fa-check ms-2"></i>';
+            btn.classList.add('btn-success');
+            contactForm.reset();
+            setTimeout(() => {
+              btn.innerHTML = originalBtnText;
+              btn.classList.remove('btn-success');
+              btn.disabled = false;
+            }, 5000);
+          })
+          .catch((err) => {
+            btn.disabled = false;
+            btn.innerHTML = 'Error. Try Again';
+            console.error('EmailJS Error Details:', err);
+            alert("Failed to send. Please check the console for errors.");
+          });
+      });
+    });
+  </script>
+
+</body>
+</html>
